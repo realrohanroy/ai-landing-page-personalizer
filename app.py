@@ -1,8 +1,8 @@
 import streamlit as st
 import requests
+BACKEND_URL = "https://your-backend.onrender.com"
 
 st.set_page_config(page_title="AI Landing Page Personalizer", layout="wide")
-
 st.title("🚀 AI Landing Page Personalizer")
 st.caption("Aligns your landing page with ad intent to improve conversion rates")
 
@@ -46,7 +46,7 @@ if st.button("⚡ Generate Personalized Page", type="primary", use_container_wid
     with st.spinner("Extracting ad intent and personalizing page..."):
         try:
             res = requests.post(
-                "http://127.0.0.1:8000/generate",
+                f"{BACKEND_URL}/generate",
                 json={"ad_text": ad_text, "url": url},
                 timeout=30
             )
@@ -177,7 +177,7 @@ if st.button("⚡ Generate Personalized Page", type="primary", use_container_wid
         st.caption("Showing hero section reconstruction — full page was blocked by site security policy")
 
     if preview_url:
-        full_preview_url = f"http://127.0.0.1:8000{preview_url}"
+        full_preview_url = f"{BACKEND_URL}{preview_url}"
         st.components.v1.iframe(full_preview_url, height=650, scrolling=True)
     else:
         st.warning("No preview available.")
