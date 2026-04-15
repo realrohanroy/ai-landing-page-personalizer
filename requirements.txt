@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+openai
+requests
+beautifulsoup4
+pydantic
+streamlit
