@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-BACKEND_URL = "https://your-backend.onrender.com"
+BACKEND_URL = "https://ai-backend-2z89.onrender.com"
 
 st.set_page_config(page_title="AI Landing Page Personalizer", layout="wide")
 st.title("🚀 AI Landing Page Personalizer")
